@@ -30,7 +30,7 @@ function showError(error) {
       break;
     case error.UNKNOWN_ERROR:
       message = "An unknown error occurred.";
-      html_message = "<small>Somethign went wrong!  Your location is unavailable. \
+      html_message = "<small>Something went wrong!  Your location is unavailable. \
         Refresh the page if you want to allow this website to access your location.</small>";
       break;
   }
@@ -46,17 +46,17 @@ async function displayForecast(position){
   const yesterdaysData = await getYesterdaysData(position);
 
   document.getElementById("three_day_article").innerHTML = "<canvas id=\"three_day_chart\"></canvas>";
-  //document.getElementById("seven_day_article").innerHTML = "<canvas id=\"seven_day_chart\"></canvas>";
-  document.getElementById("seven_day_relative_article").innerHTML = "<canvas id=\"seven_day_relative_chart\"></canvas>";
+  document.getElementById("seven_day_article").innerHTML = "<canvas id=\"seven_day_chart\"></canvas>";
+  //document.getElementById("seven_day_relative_article").innerHTML = "<canvas id=\"seven_day_relative_chart\"></canvas>";
 
   create_3day_chart(threeDayData);
   document.getElementById("three_day_article").ariaBusy = "false";
 
-  //create_7day_chart(sevenDayData);
-  //document.getElementById("seven_day_article").ariaBusy = "false";
+  create_7day_chart(sevenDayData);
+  document.getElementById("seven_day_article").ariaBusy = "false";
 
-  create_7day_relative_chart(yesterdaysData.y[0], sevenDayData);
-  console.log(yesterdaysData.y[0]);
+  //create_7day_relative_chart(yesterdaysData.y[0], sevenDayData);
+  //console.log(yesterdaysData.y[0]);
 
 }
 
@@ -100,6 +100,7 @@ async function get7DayData(position) {
   const dates = data.daily.time;
   const radiationValues = data.daily.shortwave_radiation_sum;
 
+  // convert to kWh
   const converted_data = radiationValues.map(mj => +(mj * 0.27778).toFixed(2));
 
   console.log('Combined Data:', converted_data); 
@@ -190,7 +191,7 @@ function create_7day_chart(dataset1){
       datasets: [{
         label: 'Forecast GHI (kWh/m2)',
         data: radiationValues,
-        backgroundColor: '#36a2eb'
+        backgroundColor: '#D92662'
       }],
       labels:dates
     },
