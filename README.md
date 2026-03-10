@@ -5,11 +5,11 @@ Solar energy forecast based on your location.
 
 I recently got solar panels.  It's a sizable investment and in order to get a good return on investment, I've been looking at optimising my electricity usage.
 
-If I was could figure out a reasonable forecast for the next few days solar output then I could adapt my usage to a certain degree i.e. I could decide not to put the washing on today and delay it to tomorrow or vice versa depending on circumstances.  That was the initial idea.
+If I could figure out a reasonable forecast for the solar output over the next few days then I could adapt my usage to a certain degree i.e. I could decide not to put the washing on today and delay it to tomorrow or vice versa depending on circumstances.  That was the initial idea.
 
 I found that there is a forecasted metric that directly correlates with solar panel output; global horizontal irradiance (GHI).
 
-I found an API that has a reasonable forecast for GHI and built this basic website which takes your location and shows the 3-day (hourly) forecast and the 7-day (daily) forecast.
+I found an API that has a reasonable forecast for GHI and built this one-page website which takes your location and shows the 3-day (hourly) forecast and the 7-day (daily) forecast.
 
 We'll see how it goes!
 
