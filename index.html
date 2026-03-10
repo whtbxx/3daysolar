@@ -17,6 +17,12 @@
         getLocation();
       });
     </script>
+
+    <style>
+      .container{
+        max-width: 700px;
+      }
+    </style>
   </head>
 
   <body>
@@ -24,7 +30,7 @@
     <header class="container">
       <hgroup>
         <h1>Solar Forecast &#127780;</h1>
-        <p>Solar energy forecast based on your location.</p>
+        <p>Solar energy forecast based on your location</p>
       </hgroup>
     </header>
     <!-- ./ Header -->
@@ -32,13 +38,13 @@
     <!-- Main -->
     <main class="container">
       <section>
-        <h2>3-day forecast</h2>
+        <h2>Hourly forecast (3 days)</h2>
         <article id="three_day_article">
           <small aria-busy="true">Waiting for location data...</small>
         </article>
       </section>
       <section>
-        <h2>7-day forecast</h2>
+        <h2>Daily forecast (7 days)</h2>
         <article id="seven_day_article">
           <small aria-busy="true">Waiting for location data...</small>
         </article>
